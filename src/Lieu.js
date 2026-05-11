@@ -4,20 +4,20 @@ function updateTimeContext() {
     const isNight = hour < 6 || hour > 18; //là nous cnsiderons la nuis de 18 à 6h
 
     if (isNight) {
-        document.body.classList.add = ('night-theme');
+        document.body.classList.add('night-theme');
         console.log("Passons au mode nuit");
     } else {
-        document.bidy.classList.remove('night-theme');
+        document.body.classList.remove('night-theme');
 
     }
     // récupérons les informations de notre lieu grace au gps et de la méteo
-    function updataWeatherContext() {
+    function updateWeatherContext() {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(async (position) => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
                 //c'est létape cruciale car il faudra créer un compte gratuit sur OpenWeatherMap
-                const apiKey = 'VOTRE_CLE_API'; // Remplacez par votre clé API OpenWeatherMap
+                const apiKey = '18ae0cc6ae7a3ae7c69916684ee2c384'; // Remplacez par votre clé API OpenWeatherMap
                 const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
                 try {
