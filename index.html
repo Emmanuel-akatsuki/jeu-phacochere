@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<<<<<<< HEAD
     <title>Jeu Phacochère - La Poursuite</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,5 +25,49 @@
     <script src="src/Joueurs.js"></script>
     <script src="src/Predateurs.js"></script>
     <script src="src/main.js"></script>
+=======
+    <title>Phacochère Runner - Survie Sauvage</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- UI Overlay -->
+        <div id="ui-overlay">
+            <div class="score-container">
+                <div id="current-score">Score: 0</div>
+                <div id="best-score">Record: 0</div>
+            </div>
+            
+            <div id="weather-indicator">
+                <span id="weather-icon">☀️</span>
+                <span id="location-name">Chargement...</span>
+            </div>
+
+            <!-- Start Menu -->
+            <div id="start-menu" class="overlay-screen">
+                <h1>PHACOCHÈRE</h1>
+                <p>Échappez à la créature sombre</p>
+                <button id="start-button">COMMENCER</button>
+                <div class="controls-hint">
+                    SPACE/UP: Sauter | DOWN: Glisser | LEFT/RIGHT: Couloirs
+                </div>
+            </div>
+
+            <!-- Game Over Menu -->
+            <div id="game-over-menu" class="overlay-screen hidden">
+                <h2>ATTRAPÉ !</h2>
+                <p>Le score final : <span id="final-score">0</span></p>
+                <button id="restart-button">RÉESSAYER</button>
+            </div>
+        </div>
+
+        <!-- Le Canvas du jeu -->
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="./js/game.js"></script>
+>>>>>>> 7cf45e8 (saute)
 </body>
 </html>
