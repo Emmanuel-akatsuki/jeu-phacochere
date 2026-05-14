@@ -158,16 +158,16 @@ function draw() {
 
     obstacles.forEach(obs => {
         if (obs.type === 'ROCK') {
-            ctx.fillStyle = env.isNight ? '#222' : '#4a4a4a';
+            ctx.fillStyle = env.isNight ? '#888' : '#4a4a4a'; // Plus clair la nuit
             ctx.beginPath();
             ctx.moveTo(obs.x, obs.y + obs.h);
             ctx.lineTo(obs.x + obs.w/2, obs.y);
             ctx.lineTo(obs.x + obs.w, obs.y + obs.h);
             ctx.fill();
         } else {
-            ctx.fillStyle = env.isNight ? '#1a0f00' : '#3e2723';
+            ctx.fillStyle = env.isNight ? '#8d6e63' : '#3e2723'; // Marron clair la nuit
             ctx.fillRect(obs.x, obs.y, obs.w, obs.h);
-            ctx.fillStyle = env.isNight ? '#0a2a0a' : '#2e7d32';
+            ctx.fillStyle = env.isNight ? '#4caf50' : '#2e7d32'; // Vert visible la nuit
             ctx.fillRect(obs.x - 2, obs.y - 2, 10, 6);
         }
     });

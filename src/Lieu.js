@@ -11,15 +11,16 @@ class Environment {
     }
 
     async update(deltaTime = 0) {
-        // Progression lente basée sur le temps réel ou accélérée légèrement
-        this.gameTime = (this.gameTime + (deltaTime / 100 / 60)) % 24; // 10x temps réel
+        // Synchronisation stricte avec l'heure réelle
+        const now = new Date();
+        this.gameTime = now.getHours() + now.getMinutes() / 60 + now.getSeconds() / 3600;
         this.isNight = this.gameTime < 6 || this.gameTime > 18;
         
         // Random weather changes
         this.weatherTimer -= deltaTime;
         if (this.weatherTimer <= 0) {
             this.changeWeather();
-            this.weatherTimer = 3000 + Math.random() * 6000;
+            this.weatherTimer = 30000 + Math.random() * 60000;
         }
 
         this.applyTheme();
